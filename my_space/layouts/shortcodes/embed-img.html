@@ -1,0 +1,25 @@
+<style>
+    .responsive-image-container {
+        display: inline-block;
+        margin-right: 20px; /* Adjust the margin between images as needed */
+        margin-bottom: 20px; /* Gap between images on mobile */
+    }
+
+    @media (min-width: 768px) {
+        /* Apply styles for screens larger than 768px (tablets and desktops) */
+        .responsive-image-container {
+            margin-bottom: 0; /* Remove gap between images on larger screens */
+        }
+    }
+</style>
+
+<div class="responsive-image-container">
+    <img src="{{ .Get "src" }}" style="width: {{ .Get "width" }}px; height: {{ .Get "height" }}px; border: 1px solid white;" alt="{{ .Get "alt" }}">
+</div>
+
+
+
+
+
+
+

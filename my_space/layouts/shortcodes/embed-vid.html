@@ -1,0 +1,48 @@
+<style>
+  .responsive-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for desktop */
+    overflow: hidden;
+    border: 1px solid white; /* Thin white border */
+  }
+  .responsive-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Adjust the size for mobile devices */
+  @media (max-width: 768px) {
+    .responsive-video-container {
+      padding-bottom: 133.33%; /* 4:3 aspect ratio for mobile */
+      height: auto; /* Allow container to expand based on content */
+      max-width: 100vw; /* Limit container width to viewport width */
+      overflow: hidden; /* Hide any content that overflows */
+    }
+  }
+</style>
+
+<div class="responsive-video-container">
+  <iframe 
+    title="{{ .Get "title" }}" 
+    src="{{ .Get "src" }}" 
+    frameborder="0" 
+    allowfullscreen 
+    sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
+  </iframe>
+</div>
+
+
+
+
+
+
+
+   
+
+ 
+

@@ -1,0 +1,9 @@
+[submodule "themes/red-rose"]
+	path = themes/red-rose
+	url = https://github.com/httpsecure/hugo-theme-red-rose.git
+[submodule "themes/hugo-video"]
+	path = themes/hugo-video
+	url = https://github.com/martignoni/hugo-video.git
+[submodule "hugo-video-new"]
+	path = themes/hugo-video-new
+	url = https://github.com/martignoni/hugo-video.git

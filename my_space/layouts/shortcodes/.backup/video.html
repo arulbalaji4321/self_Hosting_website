@@ -1,0 +1,8 @@
+{{ $mp4 := .Get 0 }}
+{{ $width := .Get 1 | default "100%" }}
+{{ $height := .Get 2 | default "auto" }}
+
+<video controls width="{{ $width }}px" height="{{ $height }}px">
+  <source src="{{ $mp4 }}" type="video/mp4" />
+</video>
+

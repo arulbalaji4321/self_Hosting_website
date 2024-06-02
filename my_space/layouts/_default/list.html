@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<style>
+       
+       ul.lists76 {
+             list-style: none; /* Remove default bullet points */
+       }
+   
+
+      .video-gap {
+        margin-bottom: 15px;
+    }
+
+</style>
+
+
+
+<div class="list76">
+   <div class="head-list">
+    <h4>Journal</h4>
+   </div>
+    {{.Content }}
+    <ul class="lists76">
+        {{ range $index, $page := .Pages }}
+        <li class="post">
+            <div>
+            <label> 
+            <span class="meta" style="font-size: smaller;"><i>{{ dateFormat "Jan 2, 2006" .Date }}</i></span>
+	    <span class="index"><strong>#{{ add $index 1 }}</strong></span>
+            <a class="text-white" href="{{ .RelPermalink }}">{{.Title}}</a>
+        </label>
+        </div>
+        </li>
+	<div class="video-gap"></div>
+       {{- end -}}
+    </ul>
+</div>
+{{ end }}

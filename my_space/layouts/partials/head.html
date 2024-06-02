@@ -1,0 +1,45 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Your description">
+    <meta name="theme-color" content="#000">
+       
+    <!-- canonical url-->
+    {{- if isset .Params "canonical" -}}
+    <link rel="canonical" href="{{ .Params.canonical }}" />
+    {{- else -}}
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{- end }}
+
+    <!-- Bootstrap CSS -->
+    <link defer href="/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link defer href="/css/rose.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    {{ $style := resources.Get "font.scss" | resources.ToCSS | resources.Fingerprint }}
+    <link defer rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ .Data.Integrity }}">
+    
+    <!--Favicon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+   
+
+    <!-- Tab info -->
+    <title>
+        {{ if .IsHome }}
+        {{ .Site.Title }}
+        {{ else if .Params.hideSiteTitle }}
+        {{ .Page.Title }}
+        {{ else if .Page.Title }}
+        {{ .Page.Title }} | {{ .Site.Title }}
+        {{ else }}
+        {{ .Site.Title }}
+        {{ end }}
+    </title> 
+</head>
